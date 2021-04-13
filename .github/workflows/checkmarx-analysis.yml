@@ -27,7 +27,7 @@ jobs:
       uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.0
       with:
         project: GithubActionTest
-        team: '\cxapactrial.checkmarx.net\SP\APAC\pcs-security.com - 65'
+        team: '/CxServer/SP/pcs-security'
         checkmarx_url: ${{ secrets.CHECKMARX_URL }}
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
