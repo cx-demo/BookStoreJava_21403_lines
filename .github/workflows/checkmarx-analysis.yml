@@ -28,7 +28,7 @@ jobs:
       with:
         # project: GithubActionTest
         project: JavaVulnerableLab
-        team: 'CxServer/SP/APAC/pcs'
+        team: 'CxServer\SP\APAC\pcs'
         checkmarx_url: ${{ secrets.CHECKMARX_URL }}
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
