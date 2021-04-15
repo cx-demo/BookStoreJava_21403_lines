@@ -28,14 +28,18 @@ jobs:
       uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.1
       with:
         # project: GithubActionTest
-        project: BookStoreJava_21403_lines
+        project: ${{ github.repository }}
         team: 'CxServer/SP/APAC/pcs-security.com - 65'
         checkmarx_url: ${{ secrets.CHECKMARX_URL }}
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
+        break_build: false
         scanners: sast
-        incremental: false
+        incremental: true
+        bug_tracker: Sarif
+        params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}
+        
     # Upload the Report for CodeQL/Security Alerts
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
